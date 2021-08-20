@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: "Install Nginx"
+      package:
+        name: nginx
+        state: present
+
+    -name: "Put file"
+     template:
+        src: omdexhtml.j2
+        dest: /var/www/html/index.html
+
+    -name: "Enable Nginx"
+     service:
+       name: nginx
+       state: restarted
+       enable: yes 
+
+
