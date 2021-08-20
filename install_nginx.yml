@@ -12,7 +12,7 @@
          src: omdexhtml.j2
          dest: /var/www/html/index.html
 
-     -name: "Enable Nginx"
+     - name: "Enable Nginx"
          service:
          name: nginx
          state: restarted
